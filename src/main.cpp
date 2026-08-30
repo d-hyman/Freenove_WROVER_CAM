@@ -5,6 +5,8 @@
 #include "esp_http_server.h"
 #include "board_config.h"
 
+#include <ESPmDNS.h>
+
 void startCameraServer();
 void setupLedFlash();
 
@@ -114,6 +116,7 @@ void setup() {
   Serial.println("");
   Serial.println("WiFi connected");
 
+  MDNS.begin("esp32"); 
 
 
   //Camera 
